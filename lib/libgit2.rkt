@@ -6,9 +6,6 @@
 (define-ffi-definer define-git (ffi-lib "libgit2_racket.so"))
 
 (define-git racket_git_clone (_fun _string _string -> _int))
-(define-git racket_git_branch_create (_fun _string _int -> _int))
 
-#|(racket_git_clone "https://github.com/lehitoskin/racketball.git"
-	   "/tmp/rball")|#
-
-(racket_git_branch_create "new-dev" 0)
+(racket_git_clone "https://github.com/lehitoskin/racketball.git"
+	   "/tmp/rball")
